@@ -1,0 +1,19 @@
+#logoArea img {
+  height: 80px;
+  width: 80px;
+}
+
+#logoArea h2 {
+  color: #123d3d;
+}
+
+.number-font {
+  font-family: fantasy;
+}
+
+@media (max-width: 450px) {
+  #logoArea img {
+    height: 63px;
+    width: 100px;
+  }
+}
