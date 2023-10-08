@@ -1,0 +1,17 @@
+#footer img {
+  height: 80px;
+  width: 80px;
+}
+
+#footer .importantLinks> ul li {
+  height: 40px;
+  width: 78px;
+  text-align: center;
+  line-height: 40px;
+  background-color: rgb(221, 221, 221);
+}
+
+#footer .footer-bottom h4,
+#footer .footer-bottom a {
+  color: rgb(255, 255, 255);
+}

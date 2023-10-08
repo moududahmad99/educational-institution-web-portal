@@ -1,0 +1,12 @@
+#news {
+  z-index: 2;
+}
+
+#news .news-header {
+  width: 60px;
+}
+
+#news .news-header h4 {
+  width: 100%;
+  text-align: center;
+}

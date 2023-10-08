@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+/* eslint-disable-next-line */
 module.exports = {
   content: ["./src/**/*.{html,js,jsx}"],
   theme: {
@@ -17,6 +18,7 @@ module.exports = {
   },
   plugins: [
     require('tailwindcss'),
+// eslint-disable-next-line 
     require('autoprefixer')
   ],
 }

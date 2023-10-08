@@ -1,9 +1,0 @@
-
-#blankMap {
-  background: url('../../../public/assets/blankMap.png');
-  background-size: 174px 241px;
-  padding: 1000px 0;
-  position: absolute;
-  opacity: .2;
- width: 100%;
-}
