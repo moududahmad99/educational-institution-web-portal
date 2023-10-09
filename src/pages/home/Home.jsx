@@ -5,6 +5,8 @@ import { RouterProvider, Route, createBrowserRouter, createRoutesFromElements } 
 import RootLayout from '../../components/navbar/Rootlayout';
 import LogoArea from '../../components/logoArea/LogoArea';
 import News from '../../components/news/News';
+import Banner from '../../components/banner/Banner';
+
 
 // Pages
 import Notice from '../notice/Notice';
@@ -40,6 +42,8 @@ const Home = () => {
       <LogoArea />
       <RouterProvider router={reactRouter} />
       <News />
+      {/* <Banner /> */}
+      <Banner />
       <Footer />
     </div>
   )

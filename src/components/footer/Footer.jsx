@@ -7,7 +7,7 @@ import { AiFillTwitterSquare } from 'react-icons/ai'
 const Footer = () => {
   return (
     <React.Fragment>
-      <div id="footer" className='bg-[#FFFFFF] mt-44 py-10'>
+      <div id="footer" className='bg-[#FFFFFF] mt-44 pt-5'>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4">
 
           <div class="bg-[#EDEDED45] p-4 rounded">
@@ -37,22 +37,22 @@ const Footer = () => {
           <div class="importantLinks bg-[#EDEDED45] p-4 rounded flex justify-center flex-col items-start">
             <h3 className='text-xl font-semibold'>গুরুত্বপূর্ণ লিংকঃ</h3>
             <ul className='flex justify-between w-full mt-4 mb-2 flex-wrap gap-y-2'>
-              <li>
+              <li className='text-sm'>
                 <a href="/administration">প্রশাসনিক</a>
               </li>
-              <li>
+              <li className='text-sm'>
                 <a href="/syllabus">সিলেবাস</a>
               </li>
-              <li>
+              <li className='text-sm'>
                 <a href="/routine">রুটিন</a>
               </li>
-              <li>
+              <li className='text-sm'>
                 <a href="/admission">ভর্তি</a>
               </li>
-              <li>
+              <li className='text-sm'>
                 <a href="/notice">নোটিশ</a>
               </li>
-              <li>
+              <li className='text-sm'>
                 <a href="/contact">যোগাযোগ</a>
               </li>
             </ul>
@@ -87,7 +87,7 @@ const Footer = () => {
         </div>
         <div className="footer-bottom bg-[#79929C] w-full p-4 flex justify-between flex-wrap">
           <h4 className='text-md'>All copyright © Danarhut Ansaria Fazil Madrasah</h4>
-          <a href="#" className='lg:text-md sm:text-md'>Developed By: <span className='underline lg:text-lg sm:text-md'>InnovaNex Soft BD</span></a>
+          <a href="##" className='lg:text-md sm:text-md'>Developed By: <span className='underline lg:text-lg sm:text-md'>InnovaNex Soft BD</span></a>
         </div>
       </div>
     </React.Fragment>

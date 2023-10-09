@@ -1,0 +1,18 @@
+.banner-right {
+  height: 98.4%;
+}
+
+.banner-rightNotice {
+  overflow: auto;
+  max-height: 330px;
+  padding-bottom: 7px;
+}
+
+.notice-date {
+  height: 68px;
+  width: 120px;
+}
+
+.notice-desc {
+  width: 316px !important;
+}

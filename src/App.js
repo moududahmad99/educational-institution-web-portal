@@ -6,9 +6,10 @@ function App() {
 
   return (
     <div className="App">
-      <div id="blankMap"></div>
-      <div className='container mx-auto'>
-        <Home />
+      <div id="blankMap">
+        <div className='container mx-auto'>
+          <Home />
+        </div>
       </div>
     </div>
   );

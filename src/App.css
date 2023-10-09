@@ -5,9 +5,7 @@
 #blankMap {
   position: absolute;
   width: 100%;
-  opacity: 0.34;
   background-repeat: repeat;
-  height: 100vh;
   z-index: -1;
   background-image: url("../public/assets/blankMap.png");
   background-size: 174px 241px;
