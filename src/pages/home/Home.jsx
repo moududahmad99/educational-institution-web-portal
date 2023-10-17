@@ -21,7 +21,6 @@ import Routine from '../routine/Routine';
 import Contact from '../contact/Contact';
 import Result from '../result/Result';
 import Administration from '../administration/Administration';
-import Syllabus from '../syllabus/Syllabus';
 import Notifications from '../notifications/Notifications';
 import Login from '../login/Login';
 
@@ -35,7 +34,6 @@ const Home = () => {
       <Route path='/result' element={<Result />} />
       <Route path='/contact' element={<Contact />} />
       <Route path='/administration' element={<Administration />} />
-      <Route path='/syllabus' element={<Syllabus />} />
       <Route path='/notifications' element={<Notifications />} />
       <Route path='/login' element={<Login />} />
     </Route>
