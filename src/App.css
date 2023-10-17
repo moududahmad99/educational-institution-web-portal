@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@200;300;400;500&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+
 * {
   font-family: "Hind Siliguri", sans-serif;
+}
+
+.number-font {
+  font-family: 'Anek Bangla';
 }
 
 #blankMap {
@@ -9,4 +15,17 @@
   z-index: -1;
   background-image: url("../public/assets/blankMap.png");
   background-size: 174px 241px;
+}
+
+.pages-title h3 {
+  background: #79929C;
+  /* width: 280px;
+  height: 50px;
+  line-height: 50px; */
+  display: flex;
+  justify-content: center;  
+}
+
+.pages-title p {
+  font-family: 'Hind Siliguri';
 }
