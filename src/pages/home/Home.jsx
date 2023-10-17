@@ -8,6 +8,7 @@ import News from '../../components/news/News';
 import Banner from '../../components/banner/Banner';
 import About from '../../components/about/About';
 import Teachers from '../../components/teachers/Teachers';
+import Countdown from '../../components/countdown/Countdown';
 import Footer from '../../components/footer/Footer';
 
 
@@ -48,6 +49,7 @@ const Home = () => {
       <Banner />
       <About />
       <Teachers />
+      <Countdown />
       <Footer />
     </div>
   )
