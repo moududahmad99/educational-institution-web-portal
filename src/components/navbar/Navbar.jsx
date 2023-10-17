@@ -115,7 +115,7 @@ const Navbar = () => {
               <NavLink to="/login">লগিন</NavLink>
             </li>
             <li>
-              <NavLink to="/notification"><IoMdNotificationsOutline /></NavLink>
+              <NavLink to="/notifications"><IoMdNotificationsOutline /></NavLink>
             </li>
           </ul>
         </nav>

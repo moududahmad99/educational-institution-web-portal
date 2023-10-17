@@ -6,6 +6,9 @@ import RootLayout from '../../components/navbar/Rootlayout';
 import LogoArea from '../../components/logoArea/LogoArea';
 import News from '../../components/news/News';
 import Banner from '../../components/banner/Banner';
+import About from '../../components/about/About';
+import Footer from '../../components/footer/Footer';
+
 
 
 // Pages
@@ -19,7 +22,6 @@ import Administration from '../administration/Administration';
 import Syllabus from '../syllabus/Syllabus';
 import Notifications from '../notifications/Notifications';
 import Login from '../login/Login';
-import Footer from '../../components/footer/Footer';
 
 const Home = () => {
   const reactRouter = createBrowserRouter(createRoutesFromElements(
@@ -42,8 +44,8 @@ const Home = () => {
       <LogoArea />
       <RouterProvider router={reactRouter} />
       <News />
-      {/* <Banner /> */}
       <Banner />
+      <About />
       <Footer />
     </div>
   )
