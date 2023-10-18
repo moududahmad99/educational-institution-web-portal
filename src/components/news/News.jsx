@@ -20,7 +20,7 @@ const News = () => {
     <React.Fragment>
       <div id="news" className='bg-[#FFFFFF] flex w-full my-2 items-center'>
         <div className='news-header'>
-          <h4 className='bg-[#79929C] text-white p-2 mr-10 flex'><span className='hidden md:block gulo'>জরুরী- </span> নিউজ</h4>
+          <h4 className='bg-[#79929C] text-white p-2 mr-1 flex'><span className='hidden md:block gulo'>জরুরী- </span> নিউজ</h4>
         </div>
         {/* eslint-disable-next-line */}
         <marquee

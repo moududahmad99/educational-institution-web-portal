@@ -1,0 +1,9 @@
+#contact .contact-inner img {
+  height: 125px;
+  width: 125px;
+}
+
+.contact-map {
+  height: 496px !important;
+  overflow: hidden;
+}
