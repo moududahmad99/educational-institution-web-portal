@@ -3,8 +3,6 @@ import './Contact.css'
 
 const Contact = () => {
 
-
-
   return (
     <React.Fragment>
       <div id="contact">

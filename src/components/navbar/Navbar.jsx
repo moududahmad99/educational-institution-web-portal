@@ -35,13 +35,13 @@ const Navbar = () => {
   };
 
   const handleIconClick = (linkName) => {
-    setActiveLink(linkName); 
+    setActiveLink(linkName);
   }
 
 
   const location = useLocation()
 
- 
+
   return (
 
     <React.Fragment>
@@ -128,7 +128,7 @@ const Navbar = () => {
               <span></span>
             </li>
 
-            <li  className={`relative ${location.pathname === '/students' ? 'selected' : ''}`}>
+            <li className={`relative ${location.pathname === '/students' ? 'selected' : ''}`}>
               <NavLink to="/students">শিক্ষার্থী</NavLink>
               <span></span>
             </li>
@@ -144,11 +144,11 @@ const Navbar = () => {
               <span></span>
             </li>
 
-            <li  className={`relative ${location.pathname === '/contact' ? 'selected' : ''}`}>
+            <li className={`relative ${location.pathname === '/contact' ? 'selected' : ''}`}>
               <NavLink to="/contact">যোগাযোগ</NavLink>
               <span></span>
             </li>
-            <li  className={`relative ${location.pathname === '/login' ? 'selected' : ''}`}>
+            <li className={`relative ${location.pathname === '/login' ? 'selected' : ''}`}>
               <NavLink to="/login">লগিন</NavLink>
               <span></span>
             </li>
@@ -209,7 +209,7 @@ const Navbar = () => {
                   <Link onClick={closeSidebar} to="/schoolfellow/play">ক্রিয়া</Link>
                 </div>
               )}
-              <i  onMouseEnter={openDropdown} onMouseLeave={closeDropdown} onClick={() => handleIconClick('সহপাঠ')} className='dropdown-sidebarIcon'><BiDownArrow /></i>
+              <i onMouseEnter={openDropdown} onMouseLeave={closeDropdown} onClick={() => handleIconClick('সহপাঠ')} className='dropdown-sidebarIcon'><BiDownArrow /></i>
             </li>
 
             {/* <li className={`relative ${dropdownVisible ? 'open' : ''}`} > */}

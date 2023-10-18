@@ -7,9 +7,8 @@ import { AiFillTwitterSquare } from 'react-icons/ai'
 const Footer = () => {
   return (
     <React.Fragment>
-      <div id="footer" className='bg-[#FFFFFF] mt-44 pt-5'>
+      <div id="footer" className='bg-[#FFFFFF] mt-8 pt-5'>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4">
-
           <div class="bg-[#EDEDED45] p-4 rounded">
             <picture className='flex justify-center flex-col items-center'>
               <img src="/assets/logo.png" alt="" />

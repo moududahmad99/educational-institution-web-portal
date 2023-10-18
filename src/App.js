@@ -1,5 +1,6 @@
+import { RouterProvider } from 'react-router-dom';
+import { reactRouter } from './RouteHandler/Router';
 import './App.css';
-import Home from './pages/home/Home';
 
 function App() {
 
@@ -8,7 +9,9 @@ function App() {
     <div className="App">
       <div id="blankMap">
         <div className='container mx-auto'>
-          <Home />
+          <div className=' home-background border bg-[#ececec90] p-2'>
+            <RouterProvider router={reactRouter} />
+          </div>
         </div>
       </div>
     </div>
