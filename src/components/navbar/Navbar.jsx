@@ -38,11 +38,11 @@ const Navbar = () => {
     setActiveLink(linkName); 
   }
 
-  const location = useLocation();
 
+  const location = useLocation()
 
+ 
   return (
-
 
     <React.Fragment>
       <div id="navbar">

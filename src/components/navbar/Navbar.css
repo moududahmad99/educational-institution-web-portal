@@ -107,6 +107,7 @@
 #navbar .dropdown-content {
   display: none;
   position: absolute;
+  background-color: #a5b6aa;
   background-color: #79929c;
   border: 1px solid #ddd;
   z-index: 1;

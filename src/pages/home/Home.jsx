@@ -101,17 +101,20 @@ const Home = () => {
     </Route>
   ))
 
+
   return (
-    <div className='home-background border bg-[#ececec90] p-2'>
-      <LogoArea />
-      <RouterProvider router={reactRouter} />
-      <News />
-      <Banner />
-      <About />
-      <Teachers />
-      <Countdown />
-      <Footer />
-    </div>
+    <>
+      <div className='home-background border bg-[#ececec90] p-2'>
+        <LogoArea />
+        <RouterProvider router={reactRouter} />
+        <News />
+        <Banner />
+        <About />
+        <Teachers />
+        <Countdown />
+        <Footer />
+      </div>
+    </>
   )
 }
 
