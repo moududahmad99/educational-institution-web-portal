@@ -1,13 +1,8 @@
 import React from 'react';
 import './Contact.css'
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-
-
 
 const Contact = () => {
 
-
-  const position = [51.505, -0.09]
 
 
   return (
@@ -42,17 +37,16 @@ const Contact = () => {
             <h5>ওয়েবসাইটঃ dhafm.edu.bd</h5>
           </div>
           <div className='bg-[#FFFFFF] contact-map'>
-            <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
-              <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              />
-              <Marker position={position}>
-                <Popup>
-                  A pretty CSS3 popup. <br /> Easily customizable.
-                </Popup>
-              </Marker>
-            </MapContainer>
+            <iframe
+              width="100%"
+              height="100%"
+              loading="lazy"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d64454.92001022029!2d88.47133635267274!3d25.90487231882091!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e4c78eebb3154f%3A0x9f7f1e031fd1fb1a!2sDanarhat%20Madrasah%20Playground!5e0!3m2!1sen!2sbd!4v1697629193272!5m2!1sen!2sbd"
+              title="Danarhut Ansariya Fazil Madrasah, Thakurgaon"
+            ></iframe>
+
           </div>
         </div>
       </div>
