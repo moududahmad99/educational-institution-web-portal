@@ -5,7 +5,7 @@ import Banner from '../../components/banner/Banner';
 import About from '../../components/about/About';
 import Teachers from '../../components/teachers/Teachers';
 import Countdown from '../../components/countdown/Countdown';
-import Footer from '../../components/footer/Footer';
+import EventsArea from '../../components/eventsArea/EventsArea';
 
 const Home = () => {
   return (
@@ -15,8 +15,8 @@ const Home = () => {
         <Banner />
         <About />
         <Teachers />
+        <EventsArea />
         <Countdown />
-        <Footer />
       </div>
     </>
   )

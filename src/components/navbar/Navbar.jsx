@@ -1,6 +1,4 @@
-
 import { Link, useLocation } from 'react-router-dom';
-
 
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
@@ -45,13 +43,16 @@ const Navbar = () => {
   return (
 
     <React.Fragment>
-      <div id="navbar">
+      <div id="navbar" >
+      
         {/* Hamburger Icon */}
         <div className={`menu-icon ${menuVisible ? 'cross' : ''}`} onClick={toggleMenu}>
           {menuVisible ? <FiX /> : <FiMenu />} {/* Use the icons */}
         </div>
         {/* Main Navigation Menu */}
-        <nav className="main-menu">
+
+        <nav className={`sticky-navbar ${menuVisible ? 'visible' : ''} main-menu`}>
+
           <ul className='flex justify-around items-center'>
             <li className={`relative ${location.pathname === '/' ? 'selected' : ''}`}>
               <NavLink to="/">প্রথম পাতা</NavLink>
@@ -59,8 +60,6 @@ const Navbar = () => {
             </li>
 
 
-            {/* <li className={`relative ${dropdownVisible ? 'open' : ''}`} onMouseEnter={openDropdown} onMouseLeave={closeDropdown}> */}
-            {/* <li className={`relative ${location.pathname.startsWith('/administration') ? 'selected' : ''}`} onMouseEnter={openDropdown} onMouseLeave={closeDropdown}> */}
             <li className={`relative ${location.pathname === '/administration' ? 'selected' : ''}`} onMouseEnter={openDropdown} onMouseLeave={closeDropdown}>
 
               <a href="##" >প্রশাসনিক</a>
@@ -191,7 +190,6 @@ const Navbar = () => {
                 <div className="dropdown-sidebar dropdownWide2">
                   <Link onClick={closeSidebar} to="/academics/class-routine">ক্লাস রুটিন</Link>
                   <Link onClick={closeSidebar} to="/academics/exam-routine">পরীক্ষার রুটিন</Link>
-                  <Link onClick={closeSidebar} to="/academics/pricipal-message">অধ্যক্ষের বাণী</Link>
                   <Link onClick={closeSidebar} to="/academics/notice">নোটিশ</Link>
                   <Link onClick={closeSidebar} to="/academics/syllabus">সিলেবাস</Link>
                   <Link onClick={closeSidebar} to="/academics/calendar">একাডেমিক ক্যালেন্ডার</Link>
@@ -212,8 +210,6 @@ const Navbar = () => {
               <i onMouseEnter={openDropdown} onMouseLeave={closeDropdown} onClick={() => handleIconClick('সহপাঠ')} className='dropdown-sidebarIcon'><BiDownArrow /></i>
             </li>
 
-            {/* <li className={`relative ${dropdownVisible ? 'open' : ''}`} > */}
-            {/* <li className={`relative ${location.pathname.startsWith('/admissions') ? 'selected' : ''}`} onMouseEnter={openDropdown} onMouseLeave={closeDropdown}> */}
             <li className='relative' onMouseEnter={openDropdown} onMouseLeave={closeDropdown}>
               <a className={`sidebar-nav ${activeLink === 'ভর্তি' ? 'selected-bg' : ''}`} onClick={() => handleIconClick('ভর্তি')} href="##">ভর্তি</a>
 
@@ -229,7 +225,6 @@ const Navbar = () => {
               )}
               <i onMouseEnter={openDropdown} onMouseLeave={closeDropdown} onClick={() => handleIconClick('ভর্তি')} className='dropdown-sidebarIcon'><BiDownArrow /></i>
             </li>
-
 
             <li className="relative" onMouseEnter={openDropdown} onMouseLeave={closeDropdown}>
               <a className={`sidebar-nav ${activeLink === 'রেজাল্ট' ? 'selected-bg' : ''}`} onClick={() => handleIconClick('রেজাল্ট')} href="##">রেজাল্ট</a>

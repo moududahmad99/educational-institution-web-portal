@@ -29,3 +29,18 @@
 .pages-title p {
   font-family: 'Hind Siliguri';
 }
+
+/* Table */
+
+.vertical-scrollMain {
+  overflow-x: scroll ;
+}
+
+
+
+@media (max-width: 768px) {
+  .vertical-scroll {
+    overflow-x: scroll;
+    width: 768px;
+  }
+}

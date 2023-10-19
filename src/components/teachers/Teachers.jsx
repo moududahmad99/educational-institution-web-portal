@@ -7,22 +7,22 @@ const Teachers = () => {
     {
       name: 'মোঃ সোলাইমান হোসেন',
       designation: 'সহকারী অধ্যাপক',
-      image: '/assets/profile.jpg', // Specify the image URL here
+      image: '/assets/profile.jpg', 
     },
     {
       name: 'মোঃ খলিলুর রহমান',
       designation: 'সাধারণ শিক্ষক',
-      image: '/assets/profile.jpg', // Specify the image URL here
+      image: '/assets/profile.jpg',
     },
     {
       name: 'মোঃ আব্দুর রহমান',
       designation: 'সাধারণ শিক্ষক',
-      image: '/assets/profile.jpg', // Specify the image URL here
+      image: '/assets/profile.jpg',
     },
     {
       name: 'মোঃ আলম আব্বাশী',
       designation: 'সাধারণ শিক্ষক',
-      image: '/assets/profile.jpg', // Specify the image URL here
+      image: '/assets/profile.jpg',
     },
   ]
 
@@ -49,9 +49,9 @@ const Teachers = () => {
             </div>
           ))}
         </div>
-          <div className='teachers-AllTeachersBtn text-white text-end mt-5'>
-            <a href="##">সকল শিক্ষক</a>
-          </div>
+        <div className='my-8 text-end'>
+          <a href="##" className='py-2 px-5 text-sm underline text-white font-medium bg-[#79929c]'>সকল শিক্ষক</a>
+        </div>
       </div>
     </React.Fragment>
   )

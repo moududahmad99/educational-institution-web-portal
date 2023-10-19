@@ -24,7 +24,6 @@
 #navbar .main-menu a {
   color: white;
   text-decoration: none;
-  /* background: #000; */
 }
 
 #navbar .main-menu span {
@@ -54,11 +53,11 @@
   left: -350px;
   height: 100vh;
   width: 350px;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  /* overflow-x: hidden; */
+  /* overflow-y: hidden; */
   transition: 0.3s;
   z-index: 2;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .sidebar ul {
@@ -234,4 +233,16 @@
   #navbar .main-menu span {
     display: none;
   }
+}
+
+.sticky-navbar {
+  position: sticky !important;
+  top: 0;
+  z-index: 100; 
+}
+
+.sticky-main-menu {
+  position: sticky;
+  top: 0;
+  z-index: 100; 
 }

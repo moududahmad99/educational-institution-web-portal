@@ -31,7 +31,6 @@ import Notifications from '../pages/notifications/Notifications';
 import Login from '../pages/login/Login';
 import Home from '../pages/home/Home';
 
-
 export const reactRouter = createBrowserRouter(createRoutesFromElements(
   <Route path='/' element={<RootLayout />}>
     <Route path='/' element={<Home />} />

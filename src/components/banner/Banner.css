@@ -4,7 +4,7 @@
 
 .banner-rightNotice {
   overflow: auto;
-  max-height: 330px;
+  /* max-height: 280px; */
   padding-bottom: 7px;
 }
 

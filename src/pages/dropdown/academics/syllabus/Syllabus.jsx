@@ -1,6 +1,17 @@
 import React from 'react'
 
+import { BsFillCalendarDateFill } from 'react-icons/bs';
+import { PiDownloadSimpleBold } from 'react-icons/pi';
+import { AiFillEye } from 'react-icons/ai';
+
 const Syllabus = () => {
+
+  const tableRows = [
+    { date: '10 - 1 - 2023', content: 'শিক্ষা প্রতিষ্ঠানের সিলেবাস' },
+    { date: '10 - 9 - 2015', content: 'মাধ্যমিক শিক্ষা সিলেবাস' },
+    { date: '11 - 10 - 2013', content: 'প্রাথমিক শিক্ষা সিলেবাস' },
+  ];
+
   return (
     <React.Fragment>
       <div id="syllabus">
@@ -9,9 +20,38 @@ const Syllabus = () => {
           <p className='text-md font-medium mt-2'>home / academics / <span className='text-red-800'> syllabus</span></p>
         </div>
 
-          <div className='border p-8 flex flex-col justify-center item-center bg-[#FF8080] my-14 text-white text-center text-lg font-medium'>
-              <p>আমরা এই পৃষ্ঠাটি আপগ্রেড করছি, আমাদের প্রগতি দেখতে থাকুন।</p>
-          </div>
+        <div className="border vertical-scrollMain bg-[#DBE8E960]">
+        <table className="border-collapse w-full vertical-scroll">
+          <thead>
+            <tr className="bg-[#BBCDCD60] ">
+              <th className="p-2 text-start w-3/12">প্রকাশের তারিখ</th>
+              <th className="p-2 text-start w-5/12">নোটিশ</th>
+              <th className="p-2 text-start w-2/12">ভিউ [PDF]</th>
+              <th className="p-2 text-start w-2/12">ডাউনলোড [PDF]</th>
+            </tr>
+          </thead>
+          <tbody>
+            {tableRows.map((row, index) => (
+              <tr key={index} className="border-b">
+                <div className='flex items-center'>
+                  <td className="p-2"><i><BsFillCalendarDateFill /></i></td>
+                  <td className="py-2">{row.date}</td>
+                </div>
+                <td className="p-2">{row.content}</td>
+                <td className="p-2">
+                  <a href={`#view-link-${index}`} className='flex items-center'> <i className='pr-1'><AiFillEye /></i> View</a>
+                </td>
+                <td className="p-2">
+                  <a href={`#download-link-${index}`} className='py-2 flex items-center'>
+                    <i className='pr-1'><PiDownloadSimpleBold /></i> Download
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      
       </div>
     </React.Fragment>
   )
