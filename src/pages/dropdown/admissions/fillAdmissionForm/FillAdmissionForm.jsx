@@ -134,16 +134,27 @@ const AdmissionForm = () => {
                   placeholder="জন্ম নিবন্ধন/জাতীয় পরিচয়পত্র নম্বর"
                 />
               </div>
-              <div className="col-span-2">
+
+              <div>
                 <label className="block text-sm font-medium text-gray-700">ভর্তিচ্ছু শ্রেণি</label>
-                <input
-                  type="text"
-                  name="grade"
+                <select
+                  name="gender"
                   value={formData.grade}
                   onChange={handleChange}
                   className="mt-1 p-2 w-full border "
-                  placeholder="ভর্তিচ্ছু শ্রেণি"
-                />
+                >
+                  <option value="">-নির্বাচন করুন-</option>
+                  <option value="1">প্রথম</option>
+                  <option value="2">দ্বিতীয়</option>
+                  <option value="3">তৃতীয়</option>
+                  <option value="4">চতুর্থ</option>
+                  <option value="5">পঞ্চম</option>
+                  <option value="6">ষষ্ঠ</option>
+                  <option value="7">সপ্তম</option>
+                  <option value="8">অষ্টম</option>
+                  <option value="9">নবম</option>
+                  <option value="10">দশম</option>
+                </select>
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700">লিঙ্গ</label>
@@ -173,38 +184,17 @@ const AdmissionForm = () => {
                 </select>
               </div>
               <div className="col-span-2">
-                <label className="block text-sm font-medium text-gray-700">বাংলায় লিখুন</label>
+                <label className="block text-sm font-medium text-gray-700">পূর্বে অধ্যায়নকৃত শিক্ষা প্রতিষ্ঠানের নাম</label>
                 <input
                   type="text"
                   name="academicInstitution"
                   value={formData.academicInstitution}
                   onChange={handleChange}
                   className="mt-1 p-2 w-full border "
-                  placeholder="পূর্বে অধ্যায়নকৃত শিক্ষা প্রতিষ্ঠানের নাম"
+                  placeholder="বাংলায় লিখুন"
                 />
               </div>
-              <div className="col-span-2">
-                <label className="block text-sm font-medium text-gray-700">বাংলায় লিখুন</label>
-                <input
-                  type="text"
-                  name="institutionAddress"
-                  value={formData.institutionAddress}
-                  onChange={handleChange}
-                  className="mt-1 p-2 w-full border "
-                  placeholder="পূর্বে অধ্যায়নকৃত শিক্ষা প্রতিষ্ঠানের ঠিকানা"
-                />
-              </div>
-              <div className="col-span-2">
-                <label className="block text-sm font-medium text-gray-700">বাংলায় লিখুন</label>
-                <input
-                  type="text"
-                  name="previousClass"
-                  value={formData.previousClass}
-                  onChange={handleChange}
-                  className="mt-1 p-2 w-full border "
-                  placeholder="পূর্বে অধ্যায়নকৃত শ্রেণি"
-                />
-              </div>
+
 
               {/* Guardian Information */}
               <div className="col-span-2">
@@ -230,7 +220,7 @@ const AdmissionForm = () => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700">বাংলায় লিখুন</label>
+                <label className="block text-sm font-medium text-gray-700">পিতার নাম (বাংলায় লিখুন)</label>
                 <input
                   type="text"
                   name="fatherNameBn"
@@ -241,7 +231,7 @@ const AdmissionForm = () => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700">বাংলায় লিখুন</label>
+                <label className="block text-sm font-medium text-gray-700">মাতার নাম (বাংলায় লিখুন)</label>
                 <input
                   type="text"
                   name="motherNameBn"
@@ -252,25 +242,25 @@ const AdmissionForm = () => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700">ইংরেজীতে লিখুন</label>
+                <label className="block text-sm font-medium text-gray-700">Father's Mobile No</label>
                 <input
                   type="text"
                   name="fatherMobile"
                   value={formData.fatherMobile}
                   onChange={handleChange}
                   className="mt-1 p-2 w-full border "
-                  placeholder="Father's Mobile No."
+                  placeholder="ইংরেজীতে লিখুন"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700">ইংরেজীতে লিখুন</label>
+                <label className="block text-sm font-medium text-gray-700">Mother's Mobile No</label>
                 <input
                   type="text"
                   name="motherMobile"
                   value={formData.motherMobile}
                   onChange={handleChange}
                   className="mt-1 p-2 w-full border "
-                  placeholder="Mother's Mobile No."
+                  placeholder="ইংরেজীতে লিখুন"
                 />
               </div>
               <div>
@@ -282,8 +272,17 @@ const AdmissionForm = () => {
                   className="mt-1 p-2 w-full border "
                 >
                   <option value="">-নির্বাচন করুন-</option>
-                  <option value="option1">পেশা 1</option>
-                  <option value="option2">পেশা 2</option>
+                  <option value="option1">চাকরি</option>
+                  <option value="option2">ডাক্তার</option>
+                  <option value="option3">শিক্ষক</option>
+                  <option value="option4">প্রকৌশলী</option>
+                  <option value="option5">ব্যবসায়ী</option>
+                  <option value="option6">চিকিৎসক</option>
+                  <option value="option7">কৃষি কর্মী</option>
+                  <option value="option8">পুলিশ কর্মী</option>
+                  <option value="option9">দর্জী</option>
+                  <option value="option10">বিজ্ঞানী</option>
+                  <option value="option10">অন্যান্য</option>
                 </select>
               </div>
               <div>
@@ -295,32 +294,31 @@ const AdmissionForm = () => {
                   className="mt-1 p-2 w-full border "
                 >
                   <option value="">-নির্বাচন করুন-</option>
-                  <option value="option1">পেশা 1</option>
-                  <option value="option2">পেশা 2</option>
+                  <option value="option1">চাকরি</option>
+                  <option value="option2">ডাক্তার</option>
+                  <option value="option3">শিক্ষক</option>
+                  <option value="option4">প্রকৌশলী</option>
+                  <option value="option5">ব্যবসায়ী</option>
+                  <option value="option6">চিকিৎসক</option>
+                  <option value="option7">কৃষি কর্মী</option>
+                  <option value="option8">পুলিশ কর্মী</option>
+                  <option value="option9">দর্জী</option>
+                  <option value="option10">বিজ্ঞানী</option>
+                  <option value="option10">অন্যান্য</option>
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700">ইংরেজীতে লিখুন</label>
+                <label className="block text-sm font-medium text-gray-700">Father's Email</label>
                 <input
                   type="text"
                   name="fatherEmail"
                   value={formData.fatherEmail}
                   onChange={handleChange}
                   className="mt-1 p-2 w-full border "
-                  placeholder="Father's Email"
+                  placeholder="ইংরেজীতে লিখুন"
                 />
               </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">ইংরেজীতে লিখুন</label>
-                <input
-                  type="text"
-                  name="motherEmail"
-                  value={formData.motherEmail}
-                  onChange={handleChange}
-                  className="mt-1 p-2 w-full border "
-                  placeholder="Mother's Email"
-                />
-              </div>
+              
               <div>
                 <label className="block text-sm font-medium text-gray-700">ইংরেজীতে লিখুন</label>
                 <input
@@ -394,7 +392,7 @@ const AdmissionForm = () => {
 
             ৪. Admit Card ডাউনলোড করতে আপনাকে Admit Card লিঙ্কে ক্লিক করে আপনার Reference/Ref Number এবং TrxID Number দিতে হবে, এবং খুব সহজে আপনি এই পত্রটি প্রিন্ট করে নিতে পারবেন। যদি কোন কারণে Admit Card হারিয়ে যায়, আপনি এই অপশনে এসে আবার আপনার Admit Card প্রিন্ট করতে পারবেন। <br /> <br />
 
-            পরীক্ষার সময়সূচীতে Admit Card এ যে তথ্য উল্লেখিত থাকবে</p>
+          </p>
         </div>
 
 

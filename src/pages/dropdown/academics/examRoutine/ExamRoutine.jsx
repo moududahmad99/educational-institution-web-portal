@@ -33,7 +33,7 @@ const ExamRoutine = () => {
           <tbody>
             {tableRows.map((row, index) => (
               <tr key={index} className="border-b">
-                <div className='flex items-center'>
+                <div className='flex items-center pt-2'>
                   <td className="p-2"><i><BsFillCalendarDateFill /></i></td>
                   <td className="py-2">{row.date}</td>
                 </div>

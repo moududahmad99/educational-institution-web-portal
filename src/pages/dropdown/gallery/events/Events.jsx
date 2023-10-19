@@ -48,7 +48,7 @@ const Events = () => {
           <h3 className='p-4 text-md font-medium'>{event.title}</h3>
           <p className='number-font font-normal py-2 px-4'>{event.date}</p>
           <div className='py-4 text-end pr-2'>
-            <a href="##" className='px-4 text-sm py-1 underline text-dark-400 font-medium bg-[#C6D6D6]'>বিস্তারিত</a>
+            <a href="##" className='px-4 text-sm py-1 underline text-white font-medium bg-[#B4B4B3]'>বিস্তারিত</a>
           </div>
         </div>
       ))}
