@@ -12,7 +12,7 @@ const Contact = () => {
         </div>
 
         <div className="contact-inner grid grid-cols-1 sm:grid-cols-2 gap-4 flex items-center">
-          <div class="bg-[#FFFFFF] pl-8 sm:pl-10 md:pl-10 lg:pl-10 xl:pl-14 p-4 rounded flex justify-center flex-col">
+          <div className="bg-[#FFFFFF] pl-8 sm:pl-10 md:pl-10 lg:pl-10 xl:pl-14 p-4 rounded flex justify-center flex-col">
             <picture className='flex justify-center sm:justify-start'>
               <img src="/assets/logo.png" alt="" />
             </picture>

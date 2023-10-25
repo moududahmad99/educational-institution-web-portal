@@ -1,5 +1,6 @@
 import React from 'react'
 import '../banner/Banner.css';
+import { NavLink } from 'react-router-dom';
 
 const NoticeBoard = () => {
 
@@ -52,7 +53,7 @@ const NoticeBoard = () => {
         </div>
 
         <div className='mt-5 absolute bottom-1 right-0 mb-3 mr-2 text-end'>
-          <a href="##" className='py-2 px-5 text-sm  underline text-white font-medium bg-[#79929c]'>সকল নোটিশ</a>
+          <NavLink to="/academics/notice"   className='py-2 px-5 text-sm  underline text-white font-medium bg-[#79929c]'>সকল নোটিশ</NavLink>
         </div>
       </div>
     </React.Fragment>

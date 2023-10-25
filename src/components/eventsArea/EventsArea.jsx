@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 
 const EventsArea = () => {
 
@@ -52,9 +53,12 @@ const EventsArea = () => {
           ))}
 
         </div>
+
+        {/* All Event Button */}
         <div className='my-8 text-end'>
-          <a href="##" className='py-2 px-5 text-sm  underline text-white font-medium bg-[#79929c]'>সব ইভেন্ট</a>
+          <NavLink to="gallery/events" className='py-2 px-5 text-sm  underline text-white font-medium bg-[#79929c]'>সব ইভেন্ট</NavLink>
         </div>
+        
       </div>
     </React.Fragment>
   )

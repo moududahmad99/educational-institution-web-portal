@@ -1,4 +1,5 @@
 import React from 'react';
+import NoticeDetails from '../noticeDetails/NoticeDetails';
 
 const Notice = () => {
   const notices = [
@@ -29,7 +30,7 @@ const Notice = () => {
     },
     // Add more notice data here
   ];
-  
+
 
   return (
     <div id="notice">
@@ -46,13 +47,16 @@ const Notice = () => {
                 <h5 className='border-b number-font'>{notice.date}</h5>
                 <h5 className='number-font'>{notice.year}</h5>
               </div>
-              <div className='items-center flex px-4 py-2 notice-desc'>
+              <div className='items-center flex pl-4 py-2 notice-desc'>
                 <h4>{notice.description}</h4>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Notice Event Component. */}
+      <NoticeDetails />
     </div>
   );
 }

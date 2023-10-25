@@ -1,5 +1,6 @@
 import React from 'react'
 import './Teachers.css'
+import { NavLink } from 'react-router-dom'
 
 const Teachers = () => {
 
@@ -50,7 +51,7 @@ const Teachers = () => {
           ))}
         </div>
         <div className='my-8 text-end'>
-          <a href="##" className='py-2 px-5 text-sm underline text-white font-medium bg-[#79929c]'>সকল শিক্ষক</a>
+          <NavLink to="/administration/teachers" className='py-2 px-5 text-sm underline text-white font-medium bg-[#79929c]'>সকল শিক্ষক</NavLink>
         </div>
       </div>
     </React.Fragment>

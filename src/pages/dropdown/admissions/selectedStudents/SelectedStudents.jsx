@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { BsFillCalendarDateFill } from 'react-icons/bs';
 import { PiDownloadSimpleBold } from 'react-icons/pi';
 import { AiFillEye } from 'react-icons/ai';
+import Modal from 'react-modal';
 
 const SelectedStudents = () => {
 
@@ -11,6 +12,18 @@ const SelectedStudents = () => {
     { date: '17 - 10 - 2022', content: 'ভর্তি নির্বাচিত শিক্ষার্থীর তালিকা ২০২২' },
   ];
 
+  // Modal 
+  const [isPdfModalOpen, setPdfModalOpen] = useState(false);
+
+  // Function to open the PDF modal
+  const openPdfModal = () => {
+    setPdfModalOpen(true);
+  };
+
+  // Function to close the PDF modal
+  const closePdfModal = () => {
+    setPdfModalOpen(false);
+  };
 
   return (
     <React.Fragment>
@@ -22,6 +35,7 @@ const SelectedStudents = () => {
 
         <div className="border vertical-scrollMain bg-[#DBE8E960]">
           <table className="border-collapse w-full vertical-scroll">
+
             <thead>
               <tr className="bg-[#BBCDCD60]">
                 <th className="p-2 text-start w-3/12">প্রকাশের তারিখ</th>
@@ -30,6 +44,7 @@ const SelectedStudents = () => {
                 <th className="p-2 text-start w-2/12">ডাউনলোড [PDF]</th>
               </tr>
             </thead>
+
             <tbody>
               {tableRows.map((row, index) => (
                 <tr key={index} className="border-b">
@@ -39,7 +54,7 @@ const SelectedStudents = () => {
                   </div>
                   <td className="p-2">{row.content}</td>
                   <td className="p-2">
-                    <a href={`#view-link-${index}`} className='flex items-center'> <i className='pr-1'><AiFillEye /></i> View</a>
+                    <a href={`#view-link-${index}`} onClick={openPdfModal} className='flex items-center'> <i className='pr-1'><AiFillEye /></i> View</a>
                   </td>
                   <td className="p-2">
                     <a href={`#download-link-${index}`} className='py-2 flex items-center'>
@@ -49,7 +64,25 @@ const SelectedStudents = () => {
                 </tr>
               ))}
             </tbody>
+
           </table>
+
+          <Modal
+            isOpen={isPdfModalOpen}
+            onRequestClose={closePdfModal}
+            contentLabel="PDF Viewer"
+          >
+            <button onClick={closePdfModal} className='flex flex-end right-2 top-2'>Close</button>
+            <iframe
+              src="https://www.africau.edu/images/default/sample.pdf"
+              title="PDF Viewer"
+              width="100%"
+              height="700"
+              frameBorder="0"
+              scrolling="auto"
+            ></iframe>
+          </Modal>
+          
         </div>
       </div>
     </React.Fragment>

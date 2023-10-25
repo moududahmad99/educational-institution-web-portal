@@ -8,9 +8,9 @@ const Footer = () => {
   return (
     <React.Fragment>
       <div id="footer" className='bg-[#FFFFFF] mt-8 pt-5'>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 px-4">
 
-          <div class="bg-[#EDEDED45] p-4 rounded">
+          <div className="bg-[#EDEDED45] p-4 rounded">
             <picture className='flex justify-center flex-col items-center'>
               <img src="/assets/logo.png" alt="" />
             </picture>
@@ -25,7 +25,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div class="bg-[#EDEDED45] p-4 rounded pt-8">
+          <div className="bg-[#EDEDED45] p-4 rounded pt-8">
             <h3 className='text-xl font-semibold pb-4'>যোগাযোগঃ</h3>
             <h5>গ্রামঃ দানারহাট, ঠাকুরগাঁও </h5>
             <h5 className='py-1'>উপজেলা ও জেলাঃ ঠাকুরগাঁও</h5>
@@ -34,7 +34,7 @@ const Footer = () => {
             <h5>ওয়েবসাইটঃ dhafm.edu.bd</h5>
           </div>
 
-          <div class="bg-[#EDEDED45] p-4 rounded pt-8">
+          <div className="bg-[#EDEDED45] p-4 rounded pt-8">
             <div>
               <h3 className='text-xl font-semibold pb-4'>গুরুত্বপূর্ণ লিংকঃ</h3>
               <ul className='pl-4'>
@@ -63,7 +63,7 @@ const Footer = () => {
             </div>
 
           </div>
-          <div class="bg-[#EDEDED45] p-4 rounded pt-8">
+          <div className="bg-[#EDEDED45] p-4 rounded pt-8">
             <div>
               <h3 className='text-xl font-semibold pb-4'>বোর্ড লিংকঃ</h3>
               <ul className='pl-4'>
@@ -85,7 +85,7 @@ const Footer = () => {
         </div>
         <div className="footer-bottom bg-[#79929C] items-center w-full p-4 flex justify-between flex-wrap">
           <h4 className='text-sm sm:text:md'>All copyright © Danarhut Ansaria Fazil Madrasah</h4>
-          <a href="##" className='text-sm lg:text-md sm:text-md'>Developed By: <span className='underline lg:text-lg sm:text-md'>InnovaNex Soft BD</span></a>
+          <a href="https://innovanex.netlify.app/" className='text-sm lg:text-md sm:text-md'>Developed By: <span className='underline lg:text-lg sm:text-md'>InnovaNex Soft BD</span></a>
         </div>
       </div>
     </React.Fragment>

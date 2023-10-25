@@ -28,7 +28,6 @@ import Album from '../pages/dropdown/gallery/album/Album';
 import Students from '../pages/students/Students';
 import Contact from '../pages/contact/Contact';
 import Notifications from '../pages/notifications/Notifications';
-import Login from '../pages/login/Login';
 import Home from '../pages/home/Home';
 
 export const reactRouter = createBrowserRouter(createRoutesFromElements(
@@ -79,6 +78,5 @@ export const reactRouter = createBrowserRouter(createRoutesFromElements(
     <Route path='/students' element={<Students />} />
     <Route path='/contact' element={<Contact />} />
     <Route path='/notifications' element={<Notifications />} />
-    <Route path='/login' element={<Login />} />
   </Route>
 ))

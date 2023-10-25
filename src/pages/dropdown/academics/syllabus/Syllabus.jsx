@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { BsFillCalendarDateFill } from 'react-icons/bs';
 import { PiDownloadSimpleBold } from 'react-icons/pi';
 import { AiFillEye } from 'react-icons/ai';
+
+import Modal from 'react-modal';
 
 const Syllabus = () => {
 
@@ -11,6 +13,19 @@ const Syllabus = () => {
     { date: '10 - 9 - 2015', content: 'মাধ্যমিক শিক্ষা সিলেবাস' },
     { date: '11 - 10 - 2013', content: 'প্রাথমিক শিক্ষা সিলেবাস' },
   ];
+
+  // Modal 
+  const [isPdfModalOpen, setPdfModalOpen] = useState(false);
+
+  // Function to open the PDF modal
+  const openPdfModal = () => {
+    setPdfModalOpen(true);
+  };
+
+  // Function to close the PDF modal
+  const closePdfModal = () => {
+    setPdfModalOpen(false);
+  };
 
   return (
     <React.Fragment>
@@ -21,7 +36,9 @@ const Syllabus = () => {
         </div>
 
         <div className="border vertical-scrollMain bg-[#DBE8E960]">
+
           <table className="border-collapse w-full vertical-scroll">
+
             <thead>
               <tr className="bg-[#BBCDCD60] ">
                 <th className="p-2 text-start w-3/12">প্রকাশের তারিখ</th>
@@ -30,6 +47,7 @@ const Syllabus = () => {
                 <th className="p-2 text-start w-2/12">ডাউনলোড [PDF]</th>
               </tr>
             </thead>
+
             <tbody>
               {tableRows.map((row, index) => (
                 <tr key={index} className="border-b">
@@ -39,7 +57,7 @@ const Syllabus = () => {
                   </div>
                   <td className="p-2">{row.content}</td>
                   <td className="p-2">
-                    <a href={`#view-link-${index}`} className='flex items-center'> <i className='pr-1'><AiFillEye /></i> View</a>
+                    <a href={`#view-link-${index}`} onClick={openPdfModal} className='flex items-center'> <i className='pr-1'><AiFillEye /></i> View</a>
                   </td>
                   <td className="p-2">
                     <a href={`#download-link-${index}`} className='py-2 flex items-center'>
@@ -49,9 +67,26 @@ const Syllabus = () => {
                 </tr>
               ))}
             </tbody>
-          </table>
-        </div>
 
+          </table>
+
+          <Modal
+            isOpen={isPdfModalOpen}
+            onRequestClose={closePdfModal}
+            contentLabel="PDF Viewer"
+          >
+            <button onClick={closePdfModal} className='flex flex-end right-2 top-2'>Close</button>
+            <iframe
+              src="https://www.africau.edu/images/default/sample.pdf"
+              title="PDF Viewer"
+              width="100%"
+              height="700"
+              frameBorder="0"
+              scrolling="auto"
+            ></iframe>
+          </Modal>
+
+        </div>
       </div>
     </React.Fragment>
   )

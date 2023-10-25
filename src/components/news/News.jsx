@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import './News.css';
+import { NavLink } from 'react-router-dom';
 
 const News = () => {
   const marqueeRef = useRef(null);
@@ -42,7 +43,7 @@ const News = () => {
             </li>
           </div>
         </marquee>
-        <a href="##" className='bg-[#79929C] p-2 text-white flex underline'>সব <span className='hidden md:block '>গুলো</span> </a>
+        <NavLink to="/academics/notice" className='bg-[#79929C] p-2 text-white flex underline'>সব <span className='hidden md:block '>গুলো</span> </NavLink>
       </div>
     </React.Fragment>
   );

@@ -144,10 +144,6 @@ const Navbar = () => {
               <NavLink to="/contact">যোগাযোগ</NavLink>
               <span></span>
             </li>
-            <li className={`relative ${location.pathname === '/login' ? 'selected' : ''}`}>
-              <NavLink to="/login">লগিন</NavLink>
-              <span></span>
-            </li>
             <li>
               <NavLink className='text-xl' to="/notifications"><IoMdNotificationsOutline /></NavLink>
             </li>
@@ -251,9 +247,6 @@ const Navbar = () => {
 
             <li onClick={closeSidebar}>
               <NavLink className='sidebar-nav' to="/contact">যোগাযোগ</NavLink>
-            </li>
-            <li onClick={closeSidebar}>
-              <NavLink className='sidebar-nav' to="/login">লগিন</NavLink>
             </li>
             <li onClick={closeSidebar}>
               <NavLink className='sidebar-nav pt-2' to="/notifications"><IoMdNotificationsOutline /></NavLink>
