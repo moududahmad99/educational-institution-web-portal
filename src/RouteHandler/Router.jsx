@@ -38,7 +38,7 @@ export const reactRouter = createBrowserRouter(createRoutesFromElements(
     {/* Administration Dropdown Start */}
     <Route path='/administration/management-committee' element={<ManagementCommitte />} />
     <Route path='/administration/president-message' element={<PresidentMessage />} />
-    <Route path='/administration/pricipal-message' element={<PrincipalMessage />} />
+    <Route path='/administration/principal-message' element={<PrincipalMessage />} />
     <Route path='/administration/teachers' element={<OurTeachers />} />
     <Route path='/administration/workers' element={<Workers />} />
     {/* Administration Dropdown End*/}

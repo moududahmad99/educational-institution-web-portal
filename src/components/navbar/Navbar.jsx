@@ -1,6 +1,5 @@
-import { Link, useLocation } from 'react-router-dom';
-
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 import { FiMenu, FiX } from 'react-icons/fi';
@@ -9,10 +8,10 @@ import { IoMdNotificationsOutline } from 'react-icons/io'
 import { BiDownArrow } from 'react-icons/bi'
 
 const Navbar = () => {
+
   const [menuVisible, setMenuVisible] = useState(false);
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [activeLink, setActiveLink] = useState(null);
-
 
   const toggleMenu = () => {
     setMenuVisible(!menuVisible);
@@ -21,7 +20,6 @@ const Navbar = () => {
   const closeSidebar = () => {
     setMenuVisible(false);
     setDropdownVisible(false);
-
   };
 
   const openDropdown = () => {
@@ -36,7 +34,6 @@ const Navbar = () => {
     setActiveLink(linkName);
   }
 
-
   const location = useLocation()
 
 
@@ -44,13 +41,13 @@ const Navbar = () => {
 
     <React.Fragment>
       <div id="navbar" >
-      
+
         {/* Hamburger Icon */}
         <div className={`menu-icon ${menuVisible ? 'cross' : ''}`} onClick={toggleMenu}>
           {menuVisible ? <FiX /> : <FiMenu />} {/* Use the icons */}
         </div>
-        {/* Main Navigation Menu */}
 
+        {/* Main Navigation Menu */}
         <nav className={`sticky-navbar ${menuVisible ? 'visible' : ''} main-menu`}>
 
           <ul className='flex justify-around items-center'>
@@ -67,7 +64,7 @@ const Navbar = () => {
                 <div className="dropdown-content dropdownWide1">
                   <Link to="/administration/management-committee">পরিচালনা কমিটি</Link>
                   <Link to="/administration/president-message">প্রতিষ্ঠান সভাপতির বাণী</Link>
-                  <Link to="/administration/pricipal-message">অধ্যক্ষের বাণী</Link>
+                  <Link to="/administration/principal-message">অধ্যক্ষের বাণী</Link>
                   <Link to="/administration/teachers">শিক্ষকবৃন্দ</Link>
                   <Link to="/administration/workers">কর্মকর্তা</Link>
                 </div>
@@ -177,11 +174,12 @@ const Navbar = () => {
                 <div className="dropdown-sidebar dropdownWide1">
                   <Link onClick={closeSidebar} to="/administration/management-committee">পরিচালনা কমিটি</Link>
                   <Link onClick={closeSidebar} to="/administration/president-message">প্রতিষ্ঠান সভাপতির বাণী</Link>
-                  <Link onClick={closeSidebar} to="/administration/pricipal-message">অধ্যক্ষের বাণী</Link>
+                  <Link onClick={closeSidebar} to="/administration/principal-message">অধ্যক্ষের বাণী</Link>
                   <Link onClick={closeSidebar} to="/administration/teachers">শিক্ষকবৃন্দ</Link>
                   <Link onClick={closeSidebar} to="/administration/workers">কর্মকর্তা</Link>
                 </div>
               )}
+
               <i onMouseEnter={openDropdown} onMouseLeave={closeDropdown} onClick={() => handleIconClick('প্রশাসনিক')} className='dropdown-sidebarIcon'><BiDownArrow /></i>
             </li>
             <li className='relative' onMouseEnter={openDropdown} onMouseLeave={closeDropdown}>
@@ -225,7 +223,6 @@ const Navbar = () => {
               )}
               <i onMouseEnter={openDropdown} onMouseLeave={closeDropdown} onClick={() => handleIconClick('ভর্তি')} className='dropdown-sidebarIcon'><BiDownArrow /></i>
             </li>
-
             <li className="relative" onMouseEnter={openDropdown} onMouseLeave={closeDropdown}>
               <a className={`sidebar-nav ${activeLink === 'রেজাল্ট' ? 'selected-bg' : ''}`} onClick={() => handleIconClick('রেজাল্ট')} href="##">রেজাল্ট</a>
               {dropdownVisible && (

@@ -16,10 +16,11 @@ const Login = () => {
               <p className='cursor-pointer underline capitalize text-lg font-medium text-end mt-4'>reset your password</p>
             </div>
           </div>
+
         </div>
       </div>
     </React.Fragment>
   )
 }
 
-export default Login
+export default Login;

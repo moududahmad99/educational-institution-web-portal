@@ -45,7 +45,7 @@ const Footer = () => {
                   <a href="http://dme.gov.bd/">মাদ্রাসা শিক্ষা অধিদপ্তর</a>
                 </li>
                 <li className='list-disc underline'>
-                  <a href="http://banbeis.gov.bd/">বাংলাদেশ শিক্ষাতথ্য ও পরিসংখ্যাস ব্যুরো</a>
+                  <a href="http://banbeis.gov.bd/">বাংলাদেশ শিক্ষাতথ্য ও পরিসংখ্যান ব্যুরো</a>
                 </li>
                 <li className='list-disc underline py-1'>
                   <a href="https://www.thakurgaon.gov.bd/">জেলা প্রশাসকের কার্যালয়, ঠাকুরগাঁও
