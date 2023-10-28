@@ -5,7 +5,8 @@ import Banner from "../../components/banner/Banner";
 import Countdown from "../../components/countdown/Countdown";
 import EventsArea from "../../components/eventsArea/EventsArea";
 import News from "../../components/news/News";
-import NoticeBoard from "../../components/noticeBoard/NoticeBoard";
+
+import NoticeBord from "../../components/noticeBord/NoticeBord";
 import Teachers from "../../components/teachers/Teachers";
 
 const Home = () => {
@@ -14,13 +15,9 @@ const Home = () => {
       <div>
         <News />
 
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:gap-4 sm:gap-y-2 w-full flex sm:justify-center">
-          {/* <div className='col-span-2'> */}
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-4 sm:gap-y-2   sm:justify-center">
           <Banner />
-          {/* </div> */}
-          <div>
-            <NoticeBoard />
-          </div>
+          <NoticeBord />
         </div>
 
         <About />
