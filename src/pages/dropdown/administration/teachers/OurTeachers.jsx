@@ -62,7 +62,7 @@ const OurTeachers = () => {
                 className="teachers-card p-4 bg-[#FFFFFF] shadow my-3 flex flex-col items-center"
               >
                 <div className="teachers-card-img my-4">
-                  {teacher?.image ? (
+                  {teacher?.image?.url ? (
                     <picture>
                       <img src={teacher.image.url} alt="profile" />
                     </picture>
