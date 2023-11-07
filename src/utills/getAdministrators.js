@@ -4,7 +4,7 @@ import axios from "./axiosInstance";
     get layoutdata
 */
 export const getAdministrators = async (queryKey = {}) => {
-  const { page, limit, searchQuery, role, position, gender } = queryKey;
+  const { page, limit = 2, searchQuery, role, position, gender } = queryKey;
 
   // Create an object to hold the query parameters that are present
   const queryParams = {};
