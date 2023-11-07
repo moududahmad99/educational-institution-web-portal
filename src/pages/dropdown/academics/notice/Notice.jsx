@@ -11,7 +11,7 @@ const Notice = () => {
   const navigate = useNavigate();
 
   /* 
-    get the argent notice
+    get all notice
   */
   const { data, isLoading, fetchNextPage, hasNextPage, isError, error } =
     useInfiniteQuery({

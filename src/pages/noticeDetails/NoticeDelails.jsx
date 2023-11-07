@@ -48,7 +48,7 @@ const NoticeDetails = () => {
           </p>
         </div>
 
-        {desc && <div className="py-4">desc</div>}
+        {desc && <div className="py-4">{desc}</div>}
         {image?.url && (
           <img
             src={image.url}
