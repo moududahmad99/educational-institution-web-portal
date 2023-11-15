@@ -76,16 +76,14 @@ const AdmissionNotice = () => {
               <tbody>
                 {admission_circular_data.map((row, index) => (
                   <tr key={index} className="border-b">
-                    <div className="flex items-center">
-                      <td className="p-2">
-                        <i>
-                          <BsFillCalendarDateFill />
-                        </i>
-                      </td>
-                      <td className="py-2">
+                    <td className="flex items-center pt-2">
+                      <i className="p-2">
+                        <BsFillCalendarDateFill />
+                      </i>
+                      <p className="py-2">
                         {moment(row.updatedAt).format("DD - MM - YYYY")}
-                      </td>
-                    </div>
+                      </p>
+                    </td>
                     <td className="p-2">
                       {row.title.split(/\s+/).slice(0, 13).join(" ") + "..."}
                     </td>
