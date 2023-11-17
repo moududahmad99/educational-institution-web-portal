@@ -1,33 +1,22 @@
-import React from 'react'
+import React from "react";
+import MessageData from "../../../../components/messageData/MessageData";
 
 const Play = () => {
   return (
-
     <React.Fragment>
       <div id="play">
         <div className="pages-title my-4 bg-gradient-to-r from-[rgba(244,254,255,1)] to-[rgba(161,182,182,1)] text-center flex flex-col items-center py-4">
-          <h3 className='bg-[#79929C] text-lg font-medium my-2 text-white px-14 sm:px-14 py-2'>ক্রিয়া</h3>
-          <p className='text-md font-medium mt-2'>home / schoolfellow / <span className='text-red-800'> play</span></p>
+          <h3 className="bg-[#79929C] text-lg font-medium my-2 text-white px-14 sm:px-14 py-2">
+            ক্রিয়া
+          </h3>
         </div>
 
-        <div className='border p-8 flex flex-col justify-center item-center bg-[#F5F5F5] my-14  text-lg'>
-          <h2 className='font-semibold mb-3'>আমাদের প্রতিষ্ঠানে নিম্নলিখিত ক্রিয়াসমূহ নির্ধারণ করেঃ</h2>
-          <p>
-            1. শিক্ষা সরঞ্জামের পরিকল্পনা এবং পর্যালোচনা সরঞ্জাম প্রদান করা.
-            2. সমৃদ্ধ পাঠ্যক্রম ব্যবস্থাপনা করা যা ছাত্র-ছাত্রীদের উন্নতি এবং বৃদ্ধির সাথে সাথে সাক্ষরতা এবং শিক্ষা দেয়. <br />
-            3. পুনঃপ্রশিক্ষণ কোর্সের মাধ্যমে সেরা শিক্ষকদের নিয়োগ এবং উন্নত পাঠক্রমের উন্নত স্তরের শিক্ষকদের উন্নত প্রশিক্ষণ প্রদান করা. <br />
-            4. উপযুক্ত শিক্ষার পরিপ্রেক্ষ্য প্রদানের মাধ্যমে ছাত্র-ছাত্রীদের জীবনে শিক্ষার মাধ্যমে সক্ষম নাগরিক গঠনে সাহায্য করা. <br />
-            5. শিক্ষার বাইরে আরও-শিক্ষানুষাসনিক উপক্রিয়াগুলি সম্পাদন করা, যেমন কর্মশীলতা উন্নত করার প্রশিক্ষণ কোর্স, শিক্ষাক্ষেত্রে সেবা প্রদান, সম্প্রদায় সেবা প্রকল্প, আইসিটি সম্প্রদায়ের উন্নতি এবং সমৃদ্ধির জন্য কর্মশীলতা প্রদানের সমর্থন দেয়. <br />
-            6. সমাজে সেবা প্রদানে সম্প্রदায়ের প্রশাসন ও সম্প্রদায় বিকাশের লক্ষ্যে সেবা প্রকল্প এবং সমর্থন প্রদান করা. <br />
-            7. প্রতিষ্ঠানের উন্নতি, সফলতা এবং শিক্ষা প্রদানের জন্য নীতি এবং পরিপ্রেক্ষ্য প্রদান করা. <br />
-            8. সম্প্রदায় প্রতিষ্ঠানের দায়িত্বের সাথে সম্প্রदায়ের সদস্যদের জীবনে সুবর্ণ যোগদান ও উন্নতি সাধারণ লক্ষ্যে বিকাশ করা. <br />
-            9. প্রতিষ্ঠানের পরিপ্রেক্ষ্য এবং উন্নতির সাথে সম্প্রदाय কর্মীদের যোগদান ও তাদের সাথে মানসিক সমৃদ্ধি ও উন্নতি সাধারণ লক্ষ্যে উন্নত করা. <br /> <br />
-            এই ক্রিয়াগুলি মাধ্যমে আমরা আমাদের প্রতিষ্ঠানের উন্নতি, শিক্ষা, এবং সমাজে সেবা প্রদানে অবদান রাখতে সক্ষম হয়। <br />
-          </p>
+        <div className="border p-8 flex flex-col justify-center item-center bg-[#F5F5F5] my-14  text-lg">
+          <MessageData type={"sports"} />
         </div>
       </div>
     </React.Fragment>
-  )
-}
+  );
+};
 
-export default Play
+export default Play;
