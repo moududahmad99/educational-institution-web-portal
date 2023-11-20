@@ -10,3 +10,23 @@
   list-style: decimal;
   padding: 10px 20px;
 }
+
+/* Define the scrollbar class */
+.thin-scrollbar {
+  /* For WebKit browsers (Chrome, Safari) */
+  scrollbar-width: thin;
+}
+
+.thin-scrollbar::-webkit-scrollbar {
+  height: 6px; /* Adjust the height as needed */
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color of the scrollbar thumb */
+  border-radius: 6px; /* Rounded corners of the thumb */
+}
+
+/* For Firefox */
+.thin-scrollbar {
+  scrollbar-width: thin;
+}

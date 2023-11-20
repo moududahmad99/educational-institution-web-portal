@@ -1,14 +1,10 @@
-import moment from "moment/moment";
 import React from "react";
-import { AiFillEye } from "react-icons/ai";
-import { BsFillCalendarDateFill } from "react-icons/bs";
-import { PiDownloadSimpleBold } from "react-icons/pi";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useInfiniteQuery } from "react-query";
-import { Link } from "react-router-dom";
 import ErrorMsg from "../../../../components/errorMsg/ErrorMsg";
 import Spinner from "../../../../components/spinner/Spinner";
 import { getAllNews } from "../../../../utills/getAllNews";
+import SelectedStudentTable from "./SelectedStudentTable";
 
 const SelectedStudents = () => {
   /* 
@@ -19,7 +15,7 @@ const SelectedStudents = () => {
       staleTime: Infinity,
       queryKey: ["admission_result"],
       queryFn: ({ pageParam }) =>
-        getAllNews({ page: pageParam, limit: 10, type: "admission result" }),
+        getAllNews({ page: pageParam, limit: 20, type: "admission result" }),
       getNextPageParam: (lastPage) => {
         if (lastPage.payload.currentPage < lastPage.payload.totalPages) {
           return lastPage.payload.currentPage + 1;
@@ -45,96 +41,23 @@ const SelectedStudents = () => {
           </h3>
         </div>
 
-        <div className="border vertical-scrollMain bg-[#DBE8E960]">
-          {/* 
-          render data
-        */}
-          {admission_result_data?.length > 0 && (
+        <div className="border bg-[#DBE8E960]">
+          {isLoading ? (
+            <Spinner />
+          ) : isError ? (
+            <ErrorMsg msg={error.message} />
+          ) : admission_result_data?.length === 0 ? (
+            <ErrorMsg msg="No data found" />
+          ) : (
             <InfiniteScroll
-              dataLength={
-                admission_result_data?.length > 0
-                  ? admission_result_data.length
-                  : 0
-              }
+              dataLength={admission_result_data.length}
               next={fetchNextPage}
               hasMore={hasNextPage}
-              loader={
-                <div className="flex justify-center items-center py-4">
-                  <Spinner />
-                </div>
-              }
+              loader={<Spinner />}
+              className="thin-scrollbar"
             >
-              <table className="border-collapse w-full vertical-scroll">
-                <thead>
-                  <tr className="bg-[#BBCDCD60]">
-                    <th className="p-2 text-start w-3/12">প্রকাশের তারিখ</th>
-                    <th className="p-2 text-start w-5/12">নোটিশ</th>
-                    <th className="p-2 text-start w-2/12">ভিউ [PDF]</th>
-                    <th className="p-2 text-start w-2/12">ডাউনলোড [PDF]</th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  {admission_result_data.map((row, index) => (
-                    <tr key={index} className="border-b">
-                      <td className="flex items-center pt-2">
-                        <i className="p-2">
-                          <BsFillCalendarDateFill />
-                        </i>
-                        <p className="py-2">
-                          {moment(row.updatedAt).format("DD - MM - YYYY")}
-                        </p>
-                      </td>
-                      <td className="p-2">
-                        {row.title.split(/\s+/).slice(0, 8).join(" ") + "..."}
-                      </td>
-                      <td className="p-2">
-                        <Link
-                          to={`/notice/${row._id}`}
-                          className="flex items-center"
-                        >
-                          {" "}
-                          <i className="pr-1">
-                            <AiFillEye />
-                          </i>{" "}
-                          View
-                        </Link>
-                      </td>
-                      <td className="p-2">
-                        <a
-                          href={`#download-link-${index}`} //Todo: download task
-                          className="py-2 flex items-center"
-                        >
-                          <i className="pr-1">
-                            <PiDownloadSimpleBold />
-                          </i>{" "}
-                          Download
-                        </a>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              <SelectedStudentTable data={admission_result_data} />
             </InfiniteScroll>
-          )}
-
-          {/* 
-          showing error messages and loading
-          */}
-          {isLoading && (
-            <div className="flex justify-center items-center py-4">
-              <Spinner />
-            </div>
-          )}
-          {!isLoading && admission_result_data?.length === 0 && (
-            <div className="flex justify-center items-center py-4">
-              <ErrorMsg msg="No data found" />
-            </div>
-          )}
-          {isError && (
-            <div className="flex justify-center items-center py-4">
-              <ErrorMsg msg={error.message} />
-            </div>
           )}
         </div>
       </div>
