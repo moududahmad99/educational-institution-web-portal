@@ -4,6 +4,7 @@ import ErrorMsg from "../../components/errorMsg/ErrorMsg";
 import Spinner from "../../components/spinner/Spinner";
 import { getLayoutByType } from "../../utills/getLayoutByType";
 import "./Contact.css";
+import InstitutionInfo from "./InstitutionInfo";
 
 const Contact = () => {
   /* 
@@ -20,71 +21,6 @@ const Contact = () => {
     staleTime: Infinity,
   });
 
-  /* 
-  render institution information
- */
-  let renderInstitutionInfo;
-  if (isLoading) {
-    renderInstitutionInfo = (
-      <p className="flex justify-center items-center">
-        <Spinner />
-      </p>
-    );
-  } else if (!isLoading && isError) {
-    renderInstitutionInfo = <ErrorMsg msg={error.message} />;
-  } else if (!isLoading && !isError && !institutionInfo?.payload) {
-    renderInstitutionInfo = <ErrorMsg msg={"No data found"} />;
-  } else if (!isLoading && !isError && institutionInfo?.payload) {
-    const {
-      phone,
-      institution_name,
-      email,
-      postOffice,
-      district,
-      village,
-      EIIN,
-      established,
-      institutionCode,
-      website,
-    } = institutionInfo?.payload?.institution_info;
-
-    renderInstitutionInfo = (
-      <div className="bg-[#FFFFFF] pl-8 sm:pl-10 md:pl-10 lg:pl-10 xl:pl-14 p-4 rounded flex justify-center flex-col">
-        <picture className="flex justify-center sm:justify-start">
-          <img src="/assets/logo.png" alt="institution-logo" />
-        </picture>
-        <div>
-          <h2 className="max-[767px]:text-lg md:text-xl font-semibold mt-4">
-            {institution_name}
-          </h2>
-          <h4 className="max-[767px]:text-sm md:text-md">
-            ডাকঘরঃ {postOffice}, জেলাঃ {district}
-          </h4>
-        </div>
-        <hr className="mt-4 mr-4" />
-        <div>
-          <h3 className="text-md max-[767px]:text-sm pt-4">EIIN: {EIIN}</h3>
-          <h3 className="text-md max-[767px]:text-sm">
-            স্থাপিতঃ <span className="number-font"> {established}</span> ইং{" "}
-          </h3>
-          <h3 className="text-md max-[767px]:text-sm">
-            প্রতিষ্ঠানের কোড: {institutionCode}
-          </h3>
-        </div>
-
-        <hr className="mt-4 mr-4" />
-        <h5 className=" pt-4">গ্রামঃ {village} </h5>
-        <h5 className="py-1">উপজেলা ও জেলাঃ {district}</h5>
-        <h5>ইমেইলঃ {email}</h5>
-        {phone && (
-          <h5 className="py-1">
-            মোবাইলঃ <span className="number-font">{phone}</span>
-          </h5>
-        )}
-        <h5>ওয়েবসাইটঃ {website}</h5>
-      </div>
-    );
-  }
   return (
     <React.Fragment>
       <div id="contact">
@@ -92,13 +28,22 @@ const Contact = () => {
           <h3 className="bg-[#79929C] text-lg font-medium my-2 text-white px-14 sm:px-14  py-2">
             যোগাযোগ
           </h3>
-          {/* <p className="text-md font-medium mt-2">
-            home / <span className="text-red-800"> contact</span>
-          </p> */}
         </div>
 
-        <div className="contact-inner grid grid-cols-1 sm:grid-cols-2 gap-4  items-center">
-          {renderInstitutionInfo}
+        <div className="contact-inner grid grid-cols-1 md:grid-cols-2 gap-4  items-center">
+          {isLoading ? (
+            <Spinner />
+          ) : isError ? (
+            <ErrorMsg msg={error.message} />
+          ) : !institutionInfo?.payload?.institution_info ? (
+            <ErrorMsg msg="No data found" />
+          ) : (
+            <div className="md:min-h-[496px] bg-[#FFFFFF]">
+              <InstitutionInfo
+                institution_info={institutionInfo?.payload?.institution_info}
+              />
+            </div>
+          )}
 
           <div className="bg-[#FFFFFF] contact-map">
             <iframe
@@ -107,8 +52,10 @@ const Contact = () => {
               loading="lazy"
               allowFullScreen
               referrerPolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d64454.92001022029!2d88.47133635267274!3d25.90487231882091!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e4c78eebb3154f%3A0x9f7f1e031fd1fb1a!2sDanarhat%20Madrasah%20Playground!5e0!3m2!1sen!2sbd!4v1697629193272!5m2!1sen!2sbd"
-              title="Danarhut Ansariya Fazil Madrasah, Thakurgaon"
+              src={institutionInfo?.payload?.institution_info?.map_link}
+              title={
+                institutionInfo?.payload?.institution_info?.institution_name
+              }
             ></iframe>
           </div>
         </div>
@@ -118,3 +65,5 @@ const Contact = () => {
 };
 
 export default Contact;
+
+// "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d64454.92001022029!2d88.47133635267274!3d25.90487231882091!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e4c78eebb3154f%3A0x9f7f1e031fd1fb1a!2sDanarhat%20Madrasah%20Playground!5e0!3m2!1sen!2sbd!4v1697629193272!5m2!1sen!2sbd"

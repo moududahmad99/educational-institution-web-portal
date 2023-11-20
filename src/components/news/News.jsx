@@ -46,31 +46,33 @@ const News = () => {
 
   return (
     <React.Fragment>
-      <div id="news" className="bg-[#FFFFFF] flex w-full my-2 items-center">
-        <div className="news-header">
-          <h4 className="bg-[#79929C] text-white p-2 mr-1 flex">
-            <span className="hidden md:block gulo">জরুরী- </span> নিউজ
-          </h4>
-        </div>
+      {!isLoading && isSuccess && newses?.payload?.news.length > 0 && (
+        <div id="news" className="bg-[#FFFFFF] flex w-full my-2 items-center">
+          <div className="news-header">
+            <h4 className="bg-[#79929C] text-white p-2 mr-1 flex">
+              <span className="hidden md:block gulo">জরুরী- </span> নিউজ
+            </h4>
+          </div>
 
-        {!isLoading && isSuccess && (
-          <marquee
-            ref={marqueeRef}
-            behavior="scroll"
-            onMouseOver={handleMouseOver}
-            onMouseOut={handleMouseOut}
-            direction="left"
+          {!isLoading && isSuccess && (
+            <marquee
+              ref={marqueeRef}
+              behavior="scroll"
+              onMouseOver={handleMouseOver}
+              onMouseOut={handleMouseOut}
+              direction="left"
+            >
+              <div className="flex">{newsContent}</div>
+            </marquee>
+          )}
+          <NavLink
+            to="/academics/notice"
+            className="bg-[#79929C] p-2 text-white flex underline"
           >
-            <div className="flex">{newsContent}</div>
-          </marquee>
-        )}
-        <NavLink
-          to="/academics/notice"
-          className="bg-[#79929C] p-2 text-white flex underline"
-        >
-          সব <span className="hidden md:block ">গুলো</span>{" "}
-        </NavLink>
-      </div>
+            সব <span className="hidden md:block ">গুলো</span>{" "}
+          </NavLink>
+        </div>
+      )}
     </React.Fragment>
   );
 };
