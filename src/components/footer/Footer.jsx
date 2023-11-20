@@ -29,9 +29,9 @@ const Footer = () => {
   let renderInstitutionInfo;
   if (isLoading) {
     renderInstitutionInfo = (
-      <p className="flex justify-center items-center">
+      <div className="flex justify-center items-center">
         <Spinner />
-      </p>
+      </div>
     );
   } else if (!isLoading && isError) {
     renderInstitutionInfo = <ErrorMsg msg={error.message} />;
