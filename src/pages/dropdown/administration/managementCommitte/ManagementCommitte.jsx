@@ -79,6 +79,7 @@ const ManagementCommitte = () => {
                 <div className="teachers-card-identity">
                   <h4 className="font-medium text-md">{commite.name}</h4>
                   <h5>{commite.position}</h5>
+                  {commite?.phone && <h5>মোবাইল: {commite.phone}</h5>}
                   <h6>{commite.institution}</h6>
                 </div>
               </div>

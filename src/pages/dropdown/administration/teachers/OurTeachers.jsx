@@ -75,6 +75,7 @@ const OurTeachers = () => {
                 <div className="teachers-card-identity">
                   <h4 className="font-medium text-md">{teacher.name}</h4>
                   <h5>{teacher.position}</h5>
+                  {teacher?.phone && <h5>মোবাইল: {teacher.phone}</h5>}
                   <h6>{teacher.institution}</h6>
                 </div>
               </div>

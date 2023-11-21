@@ -71,6 +71,7 @@ const Workers = () => {
                 <div className="teachers-card-identity">
                   <h4 className="font-medium text-md">{worker.name}</h4>
                   <h5>{worker.position}</h5>
+                  {worker?.phone && <h5>মোবাইল: {worker.phone}</h5>}
                   <h6>{worker.institution}</h6>
                 </div>
               </div>

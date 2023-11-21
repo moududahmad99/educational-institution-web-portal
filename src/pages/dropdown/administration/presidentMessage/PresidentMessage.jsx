@@ -3,62 +3,17 @@ import { useQuery } from "react-query";
 import ErrorMsg from "../../../../components/errorMsg/ErrorMsg";
 import Spinner from "../../../../components/spinner/Spinner";
 import { getAdministrators } from "../../../../utills/getAdministrators";
-import { getLayoutData } from "../../../../utills/getLayoutData";
+import PresidentData from "./PresidentData";
+
+const TYPE = "president";
 
 const PresidentMessage = () => {
-  /* 
-    get সভাপতি teachers data
-  */
-  const {
-    data: presidentTeacherData,
-    isLoading: isPreTLoading,
-    isError: isPreError,
-    error: preError,
-  } = useQuery({
-    queryFn: () =>
-      getAdministrators({ limit: 1, role: "others", position: "সভাপতি" }),
-    queryKey: ["president"],
-    staleTime: Infinity,
-  });
-
   // fetech data
   const { data, isLoading, error, isError } = useQuery({
     staleTime: Infinity,
-    queryKey: ["principal_message"],
-    queryFn: () => getLayoutData(`/layout?type=principal_message`),
+    queryKey: [TYPE],
+    queryFn: () => getAdministrators({ role: TYPE }),
   });
-
-  //data render
-
-  let layoutData;
-  if (isLoading) {
-    layoutData = (
-      <div className="flex justify-center items-center py-4">
-        <Spinner />
-      </div>
-    );
-  } else if (!isLoading && isError) {
-    layoutData = (
-      <div>
-        <ErrorMsg msg={error.message} />
-      </div>
-    );
-  } else if (!isLoading && !isError && !data?.payload) {
-    layoutData = (
-      <div>
-        <ErrorMsg msg={"No data found"} />
-      </div>
-    );
-  } else if (!isLoading && !isError && data?.payload) {
-    layoutData = (
-      <div
-        className="no-tailwind"
-        dangerouslySetInnerHTML={{
-          __html: data?.payload?.principal_message?.desc || "",
-        }}
-      />
-    );
-  }
 
   return (
     <React.Fragment>
@@ -69,67 +24,17 @@ const PresidentMessage = () => {
           </h3>
         </div>
 
-        <div className="teachers-card">
-          <div className="p-4 bg-[#FFFFFF] shadow my-3 flex flex-col">
-            {presidentTeacherData?.payload && (
-              <>
-                <div className="my-4 flex justify-center">
-                  <picture className="w-52 h-52">
-                    {presidentTeacherData?.payload.administrators[0]?.image
-                      ?.url ? (
-                      <img
-                        src={
-                          presidentTeacherData?.payload.administrators[0]?.image
-                            .url
-                        }
-                        className="object-cover w-52 h-52"
-                        alt="profile"
-                      />
-                    ) : (
-                      <img
-                        src={`/assets/profile.jpg`}
-                        className="object-cover"
-                        alt="profile"
-                      />
-                    )}
-                  </picture>
-                </div>
-                <div className="teachers-card-identity">
-                  <h4 className="font-medium text-lg">
-                    {presidentTeacherData?.payload.administrators[0].name}
-                  </h4>
-                  <h5>
-                    {presidentTeacherData?.payload.administrators[0]?.position}
-                  </h5>
-                  <h5 className="mt-6 text-md font-semibold">অধ্যক্ষের বাণী</h5>
-                </div>
-              </>
-            )}
-
-            {/* 
-          showing error messages and loading
-          */}
-            {isPreTLoading && (
-              <div className="flex justify-center items-center py-4">
-                <Spinner />
-              </div>
-            )}
-            {!isPreTLoading &&
-              !presidentTeacherData?.payload.administrators[0] && (
-                <div className="flex justify-center items-center py-4">
-                  <ErrorMsg msg="No data found" />
-                </div>
-              )}
-            {isPreError && (
-              <div className="flex justify-center items-center py-4">
-                <ErrorMsg msg={preError.message} />
-              </div>
-            )}
-
-            {/* message */}
-            {layoutData}
-          </div>
-        </div>
+        {isLoading ? (
+          <Spinner />
+        ) : isError ? (
+          <ErrorMsg msg={error.message} />
+        ) : data?.payload?.administrators?.length === 0 ? (
+          <ErrorMsg msg="No data found" />
+        ) : (
+          <>
+            <PresidentData data={data?.payload?.administrators[0]} />
+          </>
+        )}
       </div>
     </React.Fragment>
   );
